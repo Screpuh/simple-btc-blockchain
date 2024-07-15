@@ -1,0 +1,30 @@
+{
+  "name": "simple-btc-blockchain",
+  "version": "1.0.0",
+  "description": "In this project I will build a simplified version of the bitcoin blockchain. Step1- create a chain with blocks. Step2- make the chain distributed. 3- Add transactions.   ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Blockchain",
+    "bitcoin",
+    "cryptography",
+    "hash",
+    "merlke",
+    "trees",
+    "blocks",
+    "digital",
+    "signatures",
+    "proof",
+    "of",
+    "work",
+    "distributed",
+    "network",
+    "peer-to-peer",
+    "transactions",
+    "UTXO"
+  ],
+  "author": "Marco Schaap",
+  "license": "ISC"
+}
