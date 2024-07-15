@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- 
+    This is a very simple dashboard page where the user can interact with the blockchain by sending requests to the server. 
+    It's a very simple way to test the first steps of the blockchain.
+    The user can choose the URL, method, and data to send to the server. 
+    The response from the server will be displayed on the page. 
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bitcoin Blockchain Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+
+    <main>
+        <!-- Dashboard content goes here -->
+        <form id="requestForm">
+            <label for="urlInput">URL:</label>
+            <select id="urlInput" name="urlInput" required>
+                <option value="http://localhost:8000/blockchain">Chain</option>
+                <option value="http://localhost:8000/validate">Validate</option>
+                <option value="http://localhost:8000/nextblock">Add new block</option>
+                <!-- Add more options as needed -->
+              </select><br>
+
+
+            <label for="methodSelect">Method:</label>
+            <select id="methodSelect" name="methodSelect" required>
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+            </select><br>
+
+            <label for="dataInput">Data:</label>
+            <input type="text" id="dataInput" name="dataInput"><br>
+
+            <button type="submit">Send Request</button>
+        </form>
+
+        <div id="responseContainer"></div>
+        
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+    
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+            }
+    
+            h1 {
+                margin: 0;
+            }
+    
+            main {
+                max-width: 600px;
+                margin: 20px auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            form {
+                margin-bottom: 20px;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+    
+            input[type="text"],
+            select {
+                width: 100%;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+    
+            button[type="submit"] {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            #responseContainer {
+                background-color: #f5f5f5;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                white-space: pre-wrap;
+            }
+        </style>
+
+        <script>
+            const form = document.getElementById('requestForm');
+            const responseContainer = document.getElementById('responseContainer');
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const url = document.getElementById('urlInput').value;
+                const method = document.getElementById('methodSelect').value;
+                const data = document.getElementById('dataInput').value;
+
+                try {
+                    const response = await fetch(url, {
+                        method: method,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: method === 'POST' ? JSON.stringify({ data }) : undefined
+                    });
+
+                    const jsonResponse = await response.json();
+                    responseContainer.textContent = JSON.stringify(jsonResponse, null, 2);
+                } catch (error) {
+                    responseContainer.textContent = 'Error: ' + error.message;
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>

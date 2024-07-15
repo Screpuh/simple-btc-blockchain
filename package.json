@@ -1,10 +1,12 @@
 {
   "name": "simple-btc-blockchain",
   "version": "1.0.0",
-  "description": "In this project I will build a simplified version of the bitcoin blockchain. Step1- create a chain with blocks. Step2- make the chain distributed. 3- Add transactions.   ",
+  "type": "module",
+  "description": "In this project I will build a simplified version of the bitcoin blockchain. Step1- create a chain with blocks. Step2- make the chain distributed. 3- Add transactions. ",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "nodemon index.js"
   },
   "keywords": [
     "Blockchain",
@@ -26,5 +28,11 @@
     "UTXO"
   ],
   "author": "Marco Schaap",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }
