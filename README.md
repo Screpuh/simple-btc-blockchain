@@ -43,5 +43,6 @@ This project is licensed under the MIT License.
 5. Add transactions. (format, UTXOs, merkle trees, UTXO storage)
 6. Signing transactions. (private/public keys, wallets)
 7. Transaction validation. (syntax, signature, double spending, verification, transaction fees, script execution)
-. Add transactions
-8. Create a React project to display everything that is happening on a node.
+8. Create SVPs
+
+Somewhere down the line: Create a React project to display everything that is happening on a node.
