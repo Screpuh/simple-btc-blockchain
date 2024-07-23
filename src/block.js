@@ -54,6 +54,8 @@ class Block {
             hash = this.createHash();
         }
 
+        this.hash = hash;
+
         return hash;
     }
 

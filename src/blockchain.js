@@ -16,8 +16,7 @@ class Blockchain {
     addBlock(block) {
         // check if previous hash is correct
         if (block.checkProof()) {
-            console.log(block);
-            throw new Error('Invalid previous hash');
+            throw new Error('Invalid block');
         }
         this.chain.push(block);
     }

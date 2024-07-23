@@ -168,6 +168,10 @@ class Node {
         return this.messageIds.includes(id);
     }
 
+    getMessageIds() {
+        return this.messageIds;
+    }
+
     close() {
        // Close all peer connections
         this.peers.forEach((ws, id) => {
@@ -190,3 +194,5 @@ class Node {
         this.serverAddresses = [];
     }
 }
+
+export default Node;

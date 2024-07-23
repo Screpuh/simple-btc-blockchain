@@ -5,8 +5,8 @@
   "description": "In this project I will build a simplified version of the bitcoin blockchain. Step1- create a chain with blocks. Step2- make the chain distributed. 3- Add transactions. ",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start": "nodemon index.js"
+    "test": "mocha",
+    "start": "nodemon src/index.js"
   },
   "keywords": [
     "Blockchain",
@@ -34,6 +34,8 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.6.0",
     "nodemon": "^3.1.4"
   }
 }
